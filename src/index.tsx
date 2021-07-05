@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Router from './router'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
+const App = () => (
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>
+)
 
 ReactDOM.render(
   <React.StrictMode>
