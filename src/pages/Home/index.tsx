@@ -1,4 +1,4 @@
-import Summary from "../../components/summary/summary";
+import Summary from "../../components/summary/index";
 import content from "../../common/data";
 
 
