@@ -7,14 +7,27 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import content from './data';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const images = [
+  {
+      label: 'Agujeros',
+      imgPath: 'resources/agujeros.jpg',
+  },
+  {
+      label: 'regular1',
+      imgPath: 'resources/regular1.jpg'
+  },
+  {
+      label: 'Charola2',
+      imgPath: 'resources/charola2.jpg'
+  }
+  ]
 
 function MainCarrousel() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = content.images.length;
+  const maxSteps = images.length;
+  const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -29,25 +42,25 @@ function MainCarrousel() {
   };
 
   return (
-    <Box sx={{ maxWidth: 300, flexGrow: 1 }}>
+    <Box sx={{ width: '500px' }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {content.images.map((step, index) => (
+        {images.map((step, index) => (
           
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
                 sx={{
-                  height: 255,
+                  objectFit: 'fill',
                   display: 'block',
-                  maxWidth: 400,
+                  height : '500px',
+                  width: '500px',
                   overflow: 'hidden',
-                  width: '100%',
                 }}
                 src={step.imgPath}
                 alt={step.label}

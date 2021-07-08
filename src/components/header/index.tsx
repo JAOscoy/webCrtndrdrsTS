@@ -11,7 +11,7 @@ import './styles.css'
 
 function Header() {
     return (
-      <AppBar position='static'>
+      <AppBar position='fixed'>
         <Toolbar sx={{ backgroundColor: '#d9d9d9' }}>
         <Grid container sx={{ display: 'flex', margin: '5px'}} className='Bar'>
            <Grid item sx={{ flexGrow: 1, justifyContent: 'center' }}>

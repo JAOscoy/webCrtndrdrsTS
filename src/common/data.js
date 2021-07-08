@@ -4,23 +4,16 @@ const content = {
         description: 'La unica opción flexible y accesible a la medida',
         imageText: 'Oferta',
         linkText: 'Solicitar una cotización',
-        title: 'Bienvenidos'
+        title: 'Bienvenidos',
         },
-        
-    images: [
-        {
-            label: 'Agujeros',
-            imgPath: 'resources/agujeros.jpg',
-        },
-        {
-            label: 'regular1',
-            imgPath: 'resources/regular1.jpg'
-        },
-        {
-            label: 'Charola2',
-            imgPath: 'resources/charola2.jpg'
-        }
-        ]
+    companyData:{
+        mision: 'Los mejores en carton',
+        vision: 'Pronto los más exitosos',
+        experience: 'Más de 20 años en el mercado',
+        financial: 'Los precios más bajos',
+        quality: 'Cumplimos con ISO-9001',
+        flexibility: 'Todos los calibres',
+    },
 }
 
 export default content;
