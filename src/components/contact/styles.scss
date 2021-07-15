@@ -12,9 +12,29 @@
   }
   .Form {
     display: grid;
-    grid-template-areas: "nombre apellidos" "email operacion" "message message";
+    grid-template-areas:
+      "nombre apellidos"
+      "email operacion"
+      "message message";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    #nombre {
+      grid-area: nombre;
+      background-color: black;
+    }
+    #apellidos {
+      grid-area: apellidos;
+    }
+    #email {
+      grid-area: email;
+    }
+    #operacion {
+      grid-area: operacion;
+    }
+    #message {
+      grid-area: message;
+      justify-self: center;
+    }
     * {
       width: 200px;
       height: 50px;
@@ -22,21 +42,6 @@
       * {
         color: white;
       }
-    }
-    #nombre {
-      grid-area: "nombre";
-    }
-    #apellidos {
-      grid-area: "apellidos";
-    }
-    #email {
-      grid-area: "email";
-    }
-    #operacion {
-      grid-area: "operacion";
-    }
-    #message {
-      grid-area: "message";
     }
   }
 }
