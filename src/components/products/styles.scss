@@ -1,0 +1,39 @@
+.Products {
+  display: flex;
+  height: 80vh;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  .Tittle {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    flex: 2;
+    background-color: transparent;
+    * {
+      display: grid;
+      padding: 0.5rem;
+      text-align: left;
+      align-self: start;
+      background-color: transparent;
+      margin-left: 1.5rem;
+    }
+
+    h5 {
+      font-weight: bold;
+      height: 25vh;
+      font-size: calc(10px + 5vmin);
+    }
+  }
+  .Tabs {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    background-color: blue;
+    background-color: transparent;
+    padding: 3rem;
+  }
+}

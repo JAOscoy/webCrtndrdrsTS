@@ -1,39 +1,39 @@
 .summary {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    flex-grow: 1;
-    height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 100vh;
 }
 
 .carrousel {
-    padding: 1rem;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
 
 .carrousel > * {
-    justify-self: center;
+  justify-self: center;
 }
 
 .main {
-    padding: 1rem;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 1rem;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main > h1 {
-    font-size: calc(10vmin + 2px);
+  font-size: calc(10vmin + 2px);
 }
 
 .main > h5 {
-    font-size: calc(3vmin + 2px);
+  font-size: calc(3vmin + 2px);
 }
 
 .main > subtitle {
-    font-size: calc(5vmin + 2px);
+  font-size: calc(5vmin + 2px);
 }

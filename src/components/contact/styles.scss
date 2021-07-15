@@ -1,0 +1,42 @@
+.Contact {
+  display: grid;
+  height: 90vh;
+  grid-template-rows: 1fr 2fr;
+  background-color: #1e2952;
+  text-align: center;
+  * {
+    color: white;
+  }
+  .Title {
+    align-self: flex-end;
+  }
+  .Form {
+    display: grid;
+    grid-template-areas: "nombre apellidos" "email operacion" "message message";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    * {
+      width: 200px;
+      height: 50px;
+      display: grid;
+      * {
+        color: white;
+      }
+    }
+    #nombre {
+      grid-area: "nombre";
+    }
+    #apellidos {
+      grid-area: "apellidos";
+    }
+    #email {
+      grid-area: "email";
+    }
+    #operacion {
+      grid-area: "operacion";
+    }
+    #message {
+      grid-area: "message";
+    }
+  }
+}

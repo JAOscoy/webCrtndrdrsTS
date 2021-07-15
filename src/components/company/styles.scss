@@ -1,0 +1,32 @@
+.companyBox {
+  background-color: #1d2951;
+  display: grid;
+  justify-items: center;
+
+  * {
+    text-align: center;
+  }
+
+  .companyItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: #1d2951;
+    justify-items: center;
+    align-items: center;
+    height: 80vh;
+
+    .about {
+      display: grid;
+      justify-items: center;
+      flex-direction: row;
+
+      * {
+        display: grid;
+        justify-self: center;
+        align-self: center;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
