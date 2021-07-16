@@ -15,29 +15,53 @@
     grid-template-areas:
       "nombre apellidos"
       "email operacion"
-      "message message";
+      "message message"
+      ". send";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    #nombre {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    .nombre {
       grid-area: nombre;
-      background-color: black;
+      justify-self: end;
+      margin-right: 1rem;
     }
-    #apellidos {
+    .apellidos {
       grid-area: apellidos;
+      justify-self: start;
+      margin-left: 1rem;
     }
-    #email {
+    .email {
       grid-area: email;
+      justify-self: end;
+      margin-right: 1rem;
     }
-    #operacion {
+    .operacion {
       grid-area: operacion;
+      justify-self: start;
+      margin-left: 1rem;
     }
-    #message {
+    .message {
       grid-area: message;
       justify-self: center;
+      width: 50vw;
+      * {
+        width: 100%;
+      }
+    }
+    .send {
+      grid-area: send;
+      display: grid;
+      justify-content: center;
+      height: 50%;
+      grid-template-columns: auto;
+      align-items: center;
+      color: black;
+      * {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: flex-start;
+      }
     }
     * {
-      width: 200px;
-      height: 50px;
       display: grid;
       * {
         color: white;
