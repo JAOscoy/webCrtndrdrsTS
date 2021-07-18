@@ -3,11 +3,18 @@ import "./styles.css";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import SimpleSlider from "../../common/carrusel";
+import SimpleSlider from "../../common/list";
 import { SummaryComponent } from "./types";
+import { Button } from "@material-ui/core";
 
 export default function Summary(props: SummaryComponent) {
   const { summaryData } = props;
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Grid container className="summary">
@@ -29,9 +36,16 @@ export default function Summary(props: SummaryComponent) {
           >
             {summaryData.description}
           </Typography>
-          <Link variant="subtitle1" sx={{ color: "black" }} href="#">
-            {summaryData.linkText}
-          </Link>
+          <Button variant="contained">
+            <Link
+              variant="subtitle1"
+              underline="none"
+              sx={{ color: "white", fontWeight: "bold" }}
+              onClick={() => scrollTo("contact")}
+            >
+              {summaryData.linkText}
+            </Link>
+          </Button>
         </Grid>
       </Grid>
       <Grid item className="carrousel">

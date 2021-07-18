@@ -1,8 +1,9 @@
 export interface SummaryComponent {
-    summaryData: {
-      description: string;
-      imageText: string;
-      linkText: string;
-      title: string;
-    };
-  }
+  summaryData: {
+    id: string;
+    description: string;
+    imageText: string;
+    linkText: string;
+    title: string;
+  };
+}

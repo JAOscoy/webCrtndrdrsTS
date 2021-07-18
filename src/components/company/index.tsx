@@ -13,12 +13,12 @@ export default function Company(props: CompanyComponent) {
   const { companyData } = props;
 
   return (
-    <Box className="companyBox">
+    <Box className="companyBox" id="company">
       <Typography
         variant="h5"
         sx={{ color: "white", paddingTop: "3rem", fontWeight: "bold" }}
       >
-        ¿Porque somos la mejor alternativa?
+        {companyData.title}
       </Typography>
       <Grid container className="companyItems">
         <Grid item className="about">

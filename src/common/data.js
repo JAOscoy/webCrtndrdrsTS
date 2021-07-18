@@ -4,19 +4,23 @@ const content = {
     imageText: "Oferta",
     linkText: "Solicitar una cotización",
     title: "Bienvenidos",
+    id: "summary",
   },
   companyData: {
+    title: "Porque somos la mejor alternativa",
     mision: "Los mejores en carton",
     vision: "Pronto los más exitosos",
     experience: "Más de 20 años en el mercado",
     financial: "Los precios más bajos",
     quality: "Cumplimos con ISO-9001",
     flexibility: "Todos los calibres",
+    id: "company",
   },
   productData: {
     title: "Contamos con las siguientes especificaciones",
     description:
       "Podemos ajustarnos a cualquier configuración, ya sea en pedidos grandes o pedidos chicos",
+    id: "product",
   },
   contactData: {
     title: "Solicita una cotización",
@@ -25,12 +29,22 @@ const content = {
     nombre: "Nombre",
     apellidos: "Apellidos",
     email: "Ingresa un email de contacto",
-    operacion: [
-      "Quiero un diseño nuevo",
-      "Necesito un pedido de corrugado",
-      "Requiero asesoria sobre modelo",
+    operaciones: [
+      {
+        label: "Quiero un diseño nuevo",
+        value: "design",
+      },
+      {
+        label: "Necesito un pedido de corrugado",
+        value: "supply",
+      },
+      {
+        label: "Requiero asesoria sobre modelo",
+        value: "assess",
+      },
     ],
     message: "Envianos un mensaje",
+    id: "contact",
   },
 };
 

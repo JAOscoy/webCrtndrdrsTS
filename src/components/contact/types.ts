@@ -1,3 +1,8 @@
+interface operations {
+  value: string;
+  label: string;
+}
+
 export interface ContactComponent {
   contactData: {
     title: string;
@@ -5,7 +10,7 @@ export interface ContactComponent {
     nombre: string;
     apellidos: string;
     email: string;
-    operacion: string[];
+    operaciones: Array<operations>;
     message: string;
   };
 }

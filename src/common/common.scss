@@ -1,0 +1,10 @@
+.MuiImageListItem-root {
+  width: auto;
+  height: auto;
+  margin: 0.25rem;
+  .MuiImageListItem-img {
+    object-fit: fill;
+    height: 130px;
+    width: 250px;
+  }
+}

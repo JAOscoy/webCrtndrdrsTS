@@ -9,7 +9,7 @@ export default function Products(props: ProductComponent) {
   const { productData } = props;
 
   return (
-    <Grid container className="Products">
+    <Grid container className="Products" id="product">
       <Grid item className="Tittle">
         <Typography variant="h5">{productData.title}</Typography>
         <Typography variant="h6">{productData.description}</Typography>

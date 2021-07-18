@@ -1,10 +1,11 @@
 export interface CompanyComponent {
-    companyData: {
-      mision: string;
-      vision: string;
-      experience: string;
-      financial: string;
-      quality: string;
-      flexibility: string;
-    };
-  }
+  companyData: {
+    title: string;
+    mision: string;
+    vision: string;
+    experience: string;
+    financial: string;
+    quality: string;
+    flexibility: string;
+  };
+}

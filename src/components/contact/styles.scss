@@ -4,11 +4,10 @@
   grid-template-rows: 1fr 2fr;
   background-color: #1e2952;
   text-align: center;
+  align-items: center;
+  scroll-margin-top: 3rem;
   * {
     color: white;
-  }
-  .Title {
-    align-self: flex-end;
   }
   .Form {
     display: grid;
@@ -23,26 +22,36 @@
       grid-area: nombre;
       justify-self: end;
       margin-right: 1rem;
+      height: 70px;
+      width: 400px;
+      display: grid;
     }
     .apellidos {
       grid-area: apellidos;
       justify-self: start;
       margin-left: 1rem;
+      height: 70px;
+      width: 400px;
     }
     .email {
       grid-area: email;
       justify-self: end;
       margin-right: 1rem;
+      width: 400px;
+      height: 70px;
     }
     .operacion {
       grid-area: operacion;
       justify-self: start;
+      width: 400px;
+      height: 70px;
       margin-left: 1rem;
     }
     .message {
       grid-area: message;
       justify-self: center;
       width: 50vw;
+      height: 100px;
       * {
         width: 100%;
       }
@@ -51,21 +60,20 @@
       grid-area: send;
       display: grid;
       justify-content: center;
-      height: 50%;
       grid-template-columns: auto;
       align-items: center;
       color: black;
       * {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 50px 50px;
         justify-content: flex-start;
       }
     }
     * {
       display: grid;
-      * {
-        color: white;
-      }
+      margin: 0.25rem;
     }
   }
 }
