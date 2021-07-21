@@ -3,6 +3,10 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import List from "@material-ui/core/List";
+import { TabsComponent } from "../components/products/types";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -37,7 +41,8 @@ function a11yProps(index: number) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs(props: TabsComponent) {
+  const { tabsData } = props;
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -69,9 +74,13 @@ export default function VerticalTabs() {
         <Tab label="Suajes" {...a11yProps(5)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <ul> Dureza </ul>
-        <li>32 ECT </li>
-        <li>36 ECT</li>
+        <List>
+          {tabsData.calibre.map((item) => (
+            <ListItem disablePadding>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

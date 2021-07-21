@@ -22,6 +22,9 @@ const content = {
       "Podemos ajustarnos a cualquier configuración, ya sea en pedidos grandes o pedidos chicos",
     id: "product",
   },
+  tabsData: {
+    calibre: ["32 ECT", "36 ECT", "38 ECT"],
+  },
   contactData: {
     title: "Solicita una cotización",
     description:

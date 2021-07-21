@@ -4,6 +4,7 @@ import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { ProductComponent } from "./types";
 import Spec from "../../common/spec";
+import content from "../../common/data";
 
 export default function Products(props: ProductComponent) {
   const { productData } = props;
@@ -15,7 +16,7 @@ export default function Products(props: ProductComponent) {
         <Typography variant="h6">{productData.description}</Typography>
       </Grid>
       <Grid item className="Tabs">
-        <Spec />
+        <Spec tabsData={content.tabsData} />
       </Grid>
     </Grid>
   );
