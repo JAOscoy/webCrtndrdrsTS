@@ -2,79 +2,176 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { Grid, Typography } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
-import { ContactComponent } from "./types";
 import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
 import "./styles.scss";
+import { ContactData, errorMsg, ContactInput } from "./types";
 
-export default function Contact(props: ContactComponent) {
-  const [operation, setOperation] = React.useState("");
+const initialState = {
+  loading: false,
+  data: null,
+  response: null,
+  error: null,
+};
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setOperation(event.target.value);
+const formReducer = (
+  state: any,
+  action: {
+    type: string;
+    data: Array<ContactData>;
+    error: Array<errorMsg>;
+  }
+) => {
+  switch (action.type) {
+    case "submitForm":
+      return {
+        ...state,
+        loading: true,
+        data: null,
+        error: null,
+      };
+    case "formReceived":
+      return {
+        ...state,
+        loading: false,
+        data: action.data,
+        error: null,
+      };
+    case "errorReceived":
+      return {
+        ...state,
+        loading: false,
+        data: null,
+        error: action.error,
+      };
+  }
+};
+
+const operaciones = [
+  {
+    label: "Quiero un diseño nuevo",
+    value: "design",
+  },
+  {
+    label: "Necesito un pedido de corrugado",
+    value: "supply",
+  },
+  {
+    label: "Requiero asesoria sobre modelo",
+    value: "assess",
+  },
+];
+
+class ContactForm extends React.Component<{
+  value: String;
+  data: ContactInput;
+}> {
+  state = {
+    value: this.props.value,
+    data: {
+      nombre: this.props.data.nombre,
+      apellidos: this.props.data.apellidos,
+      email: this.props.data.email,
+      operacion: this.props.data.operacion,
+      message: this.props.data.message,
+    },
   };
-  const { contactData } = props;
-  return (
-    <Grid container className="Contact" id="contact">
-      <Grid item className="Title">
-        <Typography
-          variant="h5"
-          sx={{ fontWeight: "bold", marginBottom: "1rem" }}
-        >
-          {contactData.title}
-        </Typography>
-        <Typography variant="h6">{contactData.description}</Typography>
-      </Grid>
-      <Grid item className="Form">
-        <Grid item className="nombre">
-          <TextField
-            id="nombre"
-            label={contactData.nombre}
-            variant="standard"
-          />
+
+  render() {
+    return (
+      <form>
+        <Grid container className="Contact" id="contact">
+          <Grid item className="Title">
+            <Typography
+              variant="h5"
+              sx={{ fontWeight: "bold", marginBottom: "1rem" }}
+            >
+              Solicita una cotización
+            </Typography>
+            <Typography variant="h6">
+              Puedes enviarnos un mensaje para solicitar información
+            </Typography>
+          </Grid>
+          <Grid item className="Form">
+            <Grid item className="nombre">
+              <TextField
+                id="nombre"
+                label="Nombre"
+                name="nombre"
+                variant="standard"
+                onChange={this.handleInput}
+              />
+            </Grid>
+            <Grid item className="apellidos">
+              <TextField
+                id="apellidos"
+                label="Apellidos"
+                variant="standard"
+                onChange={this.handleInput}
+              />
+            </Grid>
+            <Grid item className="email">
+              <TextField
+                id="email"
+                label="E-mail"
+                variant="standard"
+                onChange={this.handleInput}
+              />
+            </Grid>
+            <Grid item className="operacion">
+              <TextField
+                sx={{}}
+                select
+                value={this.state.value}
+                onChange={this.handleChoice}
+                label="¿Que necesitas?"
+              >
+                {operaciones.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid item className="message">
+              <TextField
+                id="message"
+                label="Envianos un mensaje"
+                variant="standard"
+                onChange={this.handleInput}
+              />
+            </Grid>
+            <Grid item className="send">
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "#2B2D2F" }}
+                endIcon={<SendIcon />}
+                onClick={this.handleSubmit}
+              >
+                Enviar
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item className="apellidos">
-          <TextField
-            id="apellidos"
-            label={contactData.apellidos}
-            variant="standard"
-          />
-        </Grid>
-        <Grid item className="email">
-          <TextField id="email" label={contactData.email} variant="standard" />
-        </Grid>
-        <Grid item className="operacion">
-          <TextField
-            sx={{}}
-            select
-            value={operation}
-            onChange={handleChange}
-            label="¿Que necesitas?"
-          >
-            {contactData.operaciones.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-        </Grid>
-        <Grid item className="message">
-          <TextField
-            id="message"
-            label={contactData.message}
-            variant="standard"
-          />
-        </Grid>
-        <Grid item className="send">
-          <Button
-            variant="contained"
-            sx={{ backgroundColor: "#2B2D2F" }}
-            endIcon={<SendIcon />}
-          >
-            Enviar
-          </Button>
-        </Grid>
-      </Grid>
-    </Grid>
-  );
+      </form>
+    );
+  }
+
+  handleChoice = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ value: event.target.value });
+  };
+  handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { data } = { ...this.state };
+    const currentState = data;
+    const myObj: { [index: string]: any } = ({} = event.target.name);
+    const { value } = event.target;
+    currentState[myObj] = value;
+    this.setState({ data: currentState });
+  };
+  handleSubmit = () => {
+    let { data } = this.state;
+    console.log(JSON.stringify(data));
+  };
 }
+
+export default ContactForm;

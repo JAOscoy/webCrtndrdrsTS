@@ -1,16 +1,24 @@
-interface operations {
+export interface operations {
   value: string;
-  label: string;
 }
 
-export interface ContactComponent {
-  contactData: {
-    title: string;
-    description: string;
-    nombre: string;
-    apellidos: string;
-    email: string;
-    operaciones: Array<operations>;
-    message: string;
-  };
+export interface errorMsg {
+  err: string;
+  code: number;
+}
+{
+}
+
+export interface ContactInput {
+  nombre: string;
+  apellidos: string;
+  email: string;
+  operacion: string;
+  message: string;
+  value: string;
+  index: string;
+}
+
+export interface ContactData {
+  [index: string]: any;
 }

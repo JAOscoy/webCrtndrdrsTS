@@ -76,7 +76,7 @@ export default function VerticalTabs(props: TabsComponent) {
       <TabPanel value={value} index={0}>
         <List>
           {tabsData.calibre.map((item) => (
-            <ListItem disablePadding>
+            <ListItem disablePadding key={item}>
               <ListItemText primary={item}></ListItemText>
             </ListItem>
           ))}

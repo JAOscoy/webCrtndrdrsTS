@@ -3,17 +3,17 @@
   "name": "Corrugado app",
   "icons": [
     {
-      "src": "/resources/logo.png",
+      "src": "./resources/logoBeta.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/resources/logo.png",
+      "src": "./resources/logoBeta.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/resources/logo.png",
+      "src": "./resources/logoBeta.ico",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -26,28 +26,12 @@ const content = {
     calibre: ["32 ECT", "36 ECT", "38 ECT"],
   },
   contactData: {
-    title: "Solicita una cotización",
-    description:
-      "Puedes enviarnos un mensaje para compartir más información sobre nuestros productos.",
+    value: "design",
     nombre: "Nombre",
     apellidos: "Apellidos",
     email: "Ingresa un email de contacto",
-    operaciones: [
-      {
-        label: "Quiero un diseño nuevo",
-        value: "design",
-      },
-      {
-        label: "Necesito un pedido de corrugado",
-        value: "supply",
-      },
-      {
-        label: "Requiero asesoria sobre modelo",
-        value: "assess",
-      },
-    ],
+    operacion: "Quiero un diseño nuevo",
     message: "Envianos un mensaje",
-    id: "contact",
   },
 };
 
