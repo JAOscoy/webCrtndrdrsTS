@@ -16,7 +16,7 @@ export interface ContactInput {
   operacion: string;
   message: string;
   value: string;
-  index: string;
+  [index: string]: any;
 }
 
 export interface ContactData {

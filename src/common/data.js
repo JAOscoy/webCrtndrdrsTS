@@ -32,6 +32,7 @@ const content = {
     email: "Ingresa un email de contacto",
     operacion: "Quiero un diseño nuevo",
     message: "Envianos un mensaje",
+    index: ['nombre'],
   },
 };
 

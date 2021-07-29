@@ -11,7 +11,7 @@ const Home = () => {
       <Summary summaryData={content.summaryData} />
       <Company companyData={content.companyData} />
       <Products productData={content.productData} />
-      <Contact value="supply" data={content.contactData} />
+      <Contact value="supply" errorText={false} data={content.contactData} />
     </div>
   );
 };

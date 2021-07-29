@@ -65,9 +65,11 @@ const operaciones = [
 class ContactForm extends React.Component<{
   value: String;
   data: ContactInput;
+  errorText: boolean;
 }> {
   state = {
     value: this.props.value,
+    errorText: this.props.errorText,
     data: {
       nombre: this.props.data.nombre,
       apellidos: this.props.data.apellidos,
@@ -97,7 +99,6 @@ class ContactForm extends React.Component<{
               <TextField
                 id="nombre"
                 label="Nombre"
-                name="nombre"
                 variant="standard"
                 onChange={this.handleInput}
               />
@@ -115,7 +116,9 @@ class ContactForm extends React.Component<{
                 id="email"
                 label="E-mail"
                 variant="standard"
-                onChange={this.handleInput}
+                onChange={this.handleEmail}
+                error={this.state.errorText}
+                helperText={this.state.errorText ? "Introduce un email valido" : ""}
               />
             </Grid>
             <Grid item className="operacion">
@@ -162,16 +165,32 @@ class ContactForm extends React.Component<{
   };
   handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { data } = { ...this.state };
-    const currentState = data;
-    const myObj: { [index: string]: any } = ({} = event.target.name);
+    const currentState: ContactData = data;
+    const { id } =  event.target;
     const { value } = event.target;
-    currentState[myObj] = value;
+    currentState[id] = value;
     this.setState({ data: currentState });
   };
   handleSubmit = () => {
     let { data } = this.state;
     console.log(JSON.stringify(data));
   };
+  handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { data } = { ...this.state };
+    const currentState: ContactData = data;
+    const { id } =  event.target;
+    const { value } = event.target;
+    currentState[id] = value;
+    const errorText = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value)
+        ? false
+        : true
+    if (!errorText) {
+    this.setState({ data: currentState, errorText: false });
+    } else {
+    this.setState({ errorText: true }); 
+    }
+  }
+
 }
 
 export default ContactForm;
