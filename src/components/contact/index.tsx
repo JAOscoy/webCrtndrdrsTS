@@ -5,47 +5,7 @@ import { TextField } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
 import "./styles.scss";
-import { ContactData, errorMsg, ContactInput } from "./types";
-
-const initialState = {
-  loading: false,
-  data: null,
-  response: null,
-  error: null,
-};
-
-const formReducer = (
-  state: any,
-  action: {
-    type: string;
-    data: Array<ContactData>;
-    error: Array<errorMsg>;
-  }
-) => {
-  switch (action.type) {
-    case "submitForm":
-      return {
-        ...state,
-        loading: true,
-        data: null,
-        error: null,
-      };
-    case "formReceived":
-      return {
-        ...state,
-        loading: false,
-        data: action.data,
-        error: null,
-      };
-    case "errorReceived":
-      return {
-        ...state,
-        loading: false,
-        data: null,
-        error: action.error,
-      };
-  }
-};
+import { ContactData, ContactInput } from "./types";
 
 const operaciones = [
   {
@@ -163,6 +123,7 @@ class ContactForm extends React.Component<{
   handleChoice = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ value: event.target.value });
   };
+
   handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { data } = { ...this.state };
     const currentState: ContactData = data;
@@ -171,15 +132,18 @@ class ContactForm extends React.Component<{
     currentState[id] = value;
     this.setState({ data: currentState });
   };
+
    handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     let { data } = this.state;
     let mailData = JSON.stringify(data)
-    fetch('https://bvqqv6fb7g.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion', {
+    fetch('https://nu6yu5qv1j.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion', {
       method: "POST",
       body: mailData,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+
       }}).then((response) => {
         console.log('Succeded')
       }).catch((error) => {

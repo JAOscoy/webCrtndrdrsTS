@@ -2,12 +2,11 @@ import "./styles.css";
 import Grid from "@material-ui/core/Grid";
 import * as React from "react";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { useHistory } from 'react-router-dom'
 import AppBar from "@material-ui/core/AppBar";
 import logo from "../../resources/logo.png";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
-import { Avatar, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import "./styles.css";
 
 class Header extends React.Component {
