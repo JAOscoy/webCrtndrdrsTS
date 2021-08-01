@@ -1,6 +1,6 @@
+import "./styles.scss";
 import Grid from "@material-ui/core/Grid";
 import { CompanyComponent } from "./types";
-import "./styles.scss";
 import { Typography } from "@material-ui/core";
 import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import TrendingUp from "@material-ui/icons/TrendingUp";

@@ -1,10 +1,10 @@
+import "./contact.scss";
 import React from "react";
 import { Button } from "@material-ui/core";
 import { Grid, Typography } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
-import "./contact.scss";
 import { ContactData, ContactInput } from "./types";
 
 const operaciones = [
