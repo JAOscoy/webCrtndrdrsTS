@@ -35,3 +35,20 @@
 .main > subtitle {
   font-size: calc(5vmin + 2px);
 }
+
+.listContainer {
+  width: auto;
+  height: auto;
+  margin: 0.25rem;
+  .listImage {
+    object-fit: contain;
+    height: 70vh;
+    width: auto;
+    .listImageItem {
+      * {
+      height: 300px;
+      width: 400px;
+      }
+    }
+  }
+}
