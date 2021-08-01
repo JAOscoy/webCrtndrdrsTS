@@ -4,7 +4,7 @@ import { Grid, Typography } from "@material-ui/core";
 import { TextField } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
-import "./styles.scss";
+import "./contact.scss";
 import { ContactData, ContactInput } from "./types";
 
 const operaciones = [

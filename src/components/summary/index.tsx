@@ -1,9 +1,9 @@
 import * as React from "react";
-import "./styles.scss";
+import "./summary.scss";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
-import SimpleSlider from "../../common/list";
+import StandardImageList from "../../common/list";
 import { SummaryComponent } from "./types";
 import { Button } from "@material-ui/core";
 
@@ -49,7 +49,7 @@ export default function Summary(props: SummaryComponent) {
         </Grid>
       </Grid>
       <Grid item className="carrousel">
-        <SimpleSlider />
+        <StandardImageList />
       </Grid>
     </Grid>
   );
