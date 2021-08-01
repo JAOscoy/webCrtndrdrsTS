@@ -1,13 +1,13 @@
 .Contact {
-  display: grid;
-  height: 90vh;
-  grid-template-rows: 1fr 2fr;
-  background-color: #1e2952;
-  text-align: center;
-  align-items: center;
-  scroll-margin-top: 3rem;
+  display: grid !important;
+  height: 90vh !important;
+  grid-template-rows: 1fr 2fr !important;
+  background-color: #1e2952 !important;
+  text-align: center !important;
+  align-items: center !important;
+  scroll-margin-top: 3rem !important;
   * {
-    color: white;
+    color: white !important;
   }
   .Form {
     display: grid;

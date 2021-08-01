@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles.scss";
+import "./Products.scss";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { ProductComponent } from "./types";
