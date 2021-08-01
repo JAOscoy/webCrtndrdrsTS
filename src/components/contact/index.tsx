@@ -42,7 +42,7 @@ class ContactForm extends React.Component<{
   render() {
     return (
       <form>
-        <Grid container className="Contact">
+        <Grid container className="Contact" id="Contact">
           <Grid item className="Title">
             <Typography
               variant="h5"

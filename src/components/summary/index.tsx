@@ -1,5 +1,5 @@
-import * as React from "react";
 import "./summary.scss";
+import * as React from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
@@ -17,7 +17,7 @@ export default function Summary(props: SummaryComponent) {
   };
 
   return (
-    <Grid container className="summary">
+    <Grid container className="summary" id="summary">
       <Grid item className="main">
         <Grid item>
           <Typography
