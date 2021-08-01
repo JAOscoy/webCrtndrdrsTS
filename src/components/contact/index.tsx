@@ -42,7 +42,7 @@ class ContactForm extends React.Component<{
 
   render() {
     return (
-        <Grid container className="Contact" id="Contact">
+        <Box className="Contact" id="Contact">
           <Grid item className="Title">
             <Typography
               variant="h5"
@@ -115,7 +115,7 @@ class ContactForm extends React.Component<{
               </Button>
             </Grid>
           </Grid>
-        </Grid>
+        </Box>
     );
   }
 
