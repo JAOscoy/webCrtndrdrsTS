@@ -49,9 +49,9 @@ export default function Summary(props: SummaryComponent) {
           </Button>
         </Grid>
       </Grid>
-      <Grid item className="carrousel">
+      <Box className="carrousel">
         <StandardImageList />
-      </Grid>
+      </Box>
     </Box>
   );
 }
