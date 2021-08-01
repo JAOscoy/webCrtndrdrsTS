@@ -1,4 +1,4 @@
-import "./contact.scss";
+import "./index.scss";
 import React from "react";
 import { Button } from "@material-ui/core";
 import { Grid, Typography } from "@material-ui/core";

@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./index.scss";
 import Grid from "@material-ui/core/Grid";
 import { CompanyComponent } from "./types";
 import { Typography } from "@material-ui/core";
