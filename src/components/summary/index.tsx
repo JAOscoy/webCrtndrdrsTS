@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./styles.css";
+import "./styles.scss";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
