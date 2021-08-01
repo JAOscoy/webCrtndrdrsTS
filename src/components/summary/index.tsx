@@ -1,5 +1,6 @@
 import "./index.scss";
 import * as React from "react";
+import { Box } from "@material-ui/system";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
@@ -17,7 +18,7 @@ export default function Summary(props: SummaryComponent) {
   };
 
   return (
-    <Grid container className="summary" id="summary">
+    <Box className="summary" id="summary">
       <Grid item className="main">
         <Grid item>
           <Typography
@@ -51,6 +52,6 @@ export default function Summary(props: SummaryComponent) {
       <Grid item className="carrousel">
         <StandardImageList />
       </Grid>
-    </Grid>
+    </Box>
   );
 }
