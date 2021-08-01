@@ -1,4 +1,5 @@
 import "./index.scss";
+import { Box } from "@material-ui/system";
 import React from "react";
 import { Button } from "@material-ui/core";
 import { Grid, Typography } from "@material-ui/core";
@@ -41,7 +42,6 @@ class ContactForm extends React.Component<{
 
   render() {
     return (
-      <form>
         <Grid container className="Contact" id="Contact">
           <Grid item className="Title">
             <Typography
@@ -116,7 +116,6 @@ class ContactForm extends React.Component<{
             </Grid>
           </Grid>
         </Grid>
-      </form>
     );
   }
 
