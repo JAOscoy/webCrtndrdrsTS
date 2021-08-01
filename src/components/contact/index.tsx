@@ -171,10 +171,22 @@ class ContactForm extends React.Component<{
     currentState[id] = value;
     this.setState({ data: currentState });
   };
-  handleSubmit = () => {
+   handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
     let { data } = this.state;
-    console.log(JSON.stringify(data));
+    let mailData = JSON.stringify(data)
+    fetch('https://bvqqv6fb7g.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion', {
+      method: "POST",
+      body: mailData,
+      headers: {
+        'Content-Type': 'application/json'
+      }}).then((response) => {
+        console.log('Succeded')
+      }).catch((error) => {
+        console.log(error)
+      })
   };
+
   handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { data } = { ...this.state };
     const currentState: ContactData = data;

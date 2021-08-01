@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import Header from "../components/header/index"
 import Footer from "../components/footer/index";
 //import Header from "../components/Header";
 import routes from "./config";
@@ -9,7 +8,6 @@ import routes from "./config";
 const Router = () => {
   return (
     <Suspense fallback={null}>
-      <Header />
       <Switch>
         {routes.map((routeItem) => {
           return (

@@ -1,20 +1,25 @@
 import "./styles.css";
 import Grid from "@material-ui/core/Grid";
 import * as React from "react";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { useHistory } from 'react-router-dom'
 import AppBar from "@material-ui/core/AppBar";
 import logo from "../../resources/logo.png";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
-import { Typography } from "@material-ui/core";
+import { Avatar, Typography } from "@material-ui/core";
 import "./styles.css";
 
-const Header = ({ t }: any) => {
-  const scrollTo = (id: string) => {
+class Header extends React.Component {
+
+  scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
       behavior: "smooth",
     });
   };
+
+  render() {
   return (
     <AppBar position="fixed">
       <Toolbar sx={{ backgroundColor: "#d9d9d9" }}>
@@ -32,29 +37,40 @@ const Header = ({ t }: any) => {
             <Link
               sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
               underline="none"
-              onClick={() => scrollTo("company")}
+              onClick={() => {
+                this.scrollTo("company")}
+              }
             >
               Nosotros
             </Link>
             <Link
               sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
               underline="none"
-              onClick={() => scrollTo("product")}
+              onClick={() => {
+                this.scrollTo("product")
+              }}
             >
               Productos
             </Link>
             <Link
               sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
               underline="none"
-              onClick={() => scrollTo("contact")}
+              onClick={() => this.scrollTo("contact")}
             >
               Contactanos
+            </Link>
+            <Link
+              sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
+              underline="none"
+              href='./login'
+            >
+              <AccountCircleIcon />
             </Link>
           </Grid>
         </Grid>
       </Toolbar>
     </AppBar>
   );
-};
+}};
 
 export default Header;

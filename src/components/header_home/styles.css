@@ -1,0 +1,10 @@
+.logo {
+  max-height: 30px;
+}
+
+.Bar {
+  @media (max-width: 600px){
+    background-color:black
+  }}
+
+
