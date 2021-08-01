@@ -7,6 +7,7 @@ import { TextField } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
 import { ContactData, ContactInput } from "./types";
+import axios from 'axios';
 
 const operaciones = [
   {
@@ -134,16 +135,10 @@ class ContactForm extends React.Component<{
 
    handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    let { data } = this.state;
-    let mailData = JSON.stringify(data)
-    fetch('https://nu6yu5qv1j.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion', {
-      method: "POST",
-      body: mailData,
-      headers: {
-        'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "*",
-
-      }}).then((response) => {
+    const { data } = this.state;
+    const mailData = JSON.stringify(data)
+    const apiURL = 'https://0vgajmo4ob.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion'
+    axios.post(apiURL, mailData).then((response) => {
         console.log('Succeded')
       }).catch((error) => {
         console.log(error)
