@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import * as React from "react";
+import { Box } from "@material-ui/system";
 import "./common.scss";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 
 export default function StandardImageList() {
   return (
+    <Box>
     <ImageList
       sx={{ width: "auto", height: "auto", overflow: "scroll" }}
       cols={3}
@@ -22,6 +24,7 @@ export default function StandardImageList() {
         </ImageListItem>
       ))}
     </ImageList>
+    </Box>
   );
 }
 
