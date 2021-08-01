@@ -1,0 +1,16 @@
+.listContainer {
+  width: auto;
+  height: auto;
+  margin: 0.25rem;
+  .listImage {
+    object-fit: contain;
+    height: 70vh;
+    width: auto;
+    .listImageItem {
+      * {
+      height: 300px;
+      width: 400px;
+      }
+    }
+  }
+}

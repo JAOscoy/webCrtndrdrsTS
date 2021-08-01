@@ -4,18 +4,16 @@
   flex-direction: row;
   flex-grow: 1;
   height: 100vh;
-}
-
-.carrousel {
-  flex: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-}
-
-.carrousel > * {
-  justify-self: center;
+  .carrousel {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+     * {
+    justify-self: center;
+    }
+  }
 }
 
 .main {

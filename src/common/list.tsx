@@ -1,20 +1,20 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+import "./index.scss";
 import * as React from "react";
 import { Box } from "@material-ui/system";
-import "./common.scss";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 
 export default function StandardImageList() {
   return (
-    <Box>
+    <Box className='listContainer'>
     <ImageList
+      className='listImage'
       sx={{ width: "auto", height: "auto", overflow: "scroll" }}
       cols={3}
       rowHeight={250}
     >
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+        <ImageListItem key={item.img} className='listImageItem'>
           <img
             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format 1x,
                 ${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}

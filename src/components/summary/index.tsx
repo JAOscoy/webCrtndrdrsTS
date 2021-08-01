@@ -19,7 +19,7 @@ export default function Summary(props: SummaryComponent) {
 
   return (
     <Box className="summary" id="summary">
-      <Grid item className="main">
+      <Grid container className="main">
         <Grid item>
           <Typography
             component="h1"
