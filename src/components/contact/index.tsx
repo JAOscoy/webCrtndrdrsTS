@@ -139,7 +139,7 @@ class ContactForm extends React.Component<{
     const mailData = JSON.stringify(data)
     const apiURL = 'https://0vgajmo4ob.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion'
     axios.post(apiURL, mailData).then((response) => {
-        console.log('Succeded')
+        console.log(response)
       }).catch((error) => {
         console.log(error)
       })
