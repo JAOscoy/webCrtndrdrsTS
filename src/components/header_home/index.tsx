@@ -1,7 +1,6 @@
 import "./styles.css";
 import Grid from "@material-ui/core/Grid";
 import * as React from "react";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppBar from "@material-ui/core/AppBar";
 import logo from "../../resources/logo.png";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -57,13 +56,6 @@ class Header extends React.Component {
               onClick={() => this.scrollTo("contact")}
             >
               Contactanos
-            </Link>
-            <Link
-              sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
-              underline="none"
-              href='./login'
-            >
-              <AccountCircleIcon />
             </Link>
           </Grid>
         </Grid>
