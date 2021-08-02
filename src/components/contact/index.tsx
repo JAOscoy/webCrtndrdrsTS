@@ -43,7 +43,7 @@ class ContactForm extends React.Component<{
 
   render() {
     return (
-        <Box className="Contact" id="Contact">
+        <Box className="contact" id="contact">
           <Grid item className="Title">
             <Typography
               variant="h5"
