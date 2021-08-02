@@ -2,13 +2,6 @@ export interface operations {
   value: string;
 }
 
-export interface errorMsg {
-  err: string;
-  code: number;
-}
-{
-}
-
 export interface ContactInput {
   nombre: string;
   apellidos: string;

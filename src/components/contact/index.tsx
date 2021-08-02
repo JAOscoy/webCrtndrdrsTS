@@ -8,6 +8,8 @@ import SendIcon from "@material-ui/icons/Send";
 import { MenuItem } from "@material-ui/core";
 import { ContactData, ContactInput } from "./types";
 import axios from 'axios';
+import ReCAPTCHA from "react-google-recaptcha"
+
 
 const operaciones = [
   {
@@ -24,12 +26,16 @@ const operaciones = [
   },
 ];
 
+const captchaKey: any = process.env.REACT_APP_CKEY
+
 class ContactForm extends React.Component<{
   value: String;
   data: ContactInput;
   errorText: boolean;
+  isHuman: boolean;
 }> {
   state = {
+    isHuman: this.props.isHuman,
     value: this.props.value,
     errorText: this.props.errorText,
     data: {
@@ -106,6 +112,11 @@ class ContactForm extends React.Component<{
               />
             </Grid>
             <Grid item className="send">
+              <ReCAPTCHA
+                sitekey={captchaKey}
+                onChange={this.humanVerifying}
+                >
+                </ReCAPTCHA>
               <Button
                 variant="contained"
                 sx={{ backgroundColor: "#2B2D2F" }}
@@ -137,13 +148,24 @@ class ContactForm extends React.Component<{
     event.preventDefault()
     const { data } = this.state;
     const mailData = JSON.stringify(data)
-    const apiURL = 'https://0vgajmo4ob.execute-api.us-east-1.amazonaws.com/default/solicitudesCotizacion'
+    const apiURL: any = process.env.REACT_APP_API_URL
+    if (this.state.isHuman) {
     axios.post(apiURL, mailData).then((response) => {
         console.log(response)
       }).catch((error) => {
         console.log(error)
-      })
+      })} else {
+        alert('Verifica que no eres un robot')
+      }
   };
+
+  humanVerifying = (response: any) => {
+    if (response) {
+      this.setState({isHuman: true})
+    } else {
+      this.setState({isHuman: false})
+    }
+  }
 
   handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { data } = { ...this.state };

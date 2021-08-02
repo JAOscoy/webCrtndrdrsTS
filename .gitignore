@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
+.env
 /coverage
+
 
 # misc
 .DS_Store
