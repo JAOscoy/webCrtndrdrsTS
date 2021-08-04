@@ -23,7 +23,7 @@ const content = {
     id: "product",
   },
   tabsData: {
-    calibre: ["32 ECT", "36 ECT", "38 ECT"],
+    calibre: ["32 ECT", "34 ECT", "36 ECT", "38 ECT"],
     tipo:['Regular', 'Doble, Charolas'],
     suaje: ['Contamos con la maxima flexibilidad para realizar cualquier doblez, corte o marca sobre el diseño'],
     color: ['Corrugado kraft para aplicaciónes comunes', 'Corrugado blanco para aplicaciones especiales'],
