@@ -24,6 +24,11 @@ const content = {
   },
   tabsData: {
     calibre: ["32 ECT", "36 ECT", "38 ECT"],
+    tipo:['Regular', 'Doble, Charolas'],
+    suaje: ['Contamos con la maxima flexibilidad para realizar cualquier doblez, corte o marca sobre el diseño'],
+    color: ['Corrugado kraft para aplicaciónes comunes', 'Corrugado blanco para aplicaciones especiales'],
+    dimensiones: ['Largo desde 30 cm hasta 120 cm', 'Ancho desde 40 cm hasta 240cm', 'Alto desde 20 hasta 70 cm'],
+    uniones: ['Ceja pegada interior', 'Ceja pegada exterior', 'Grapa exterior', 'Grapa interior'],
   },
   contactData: {
     value: "design",

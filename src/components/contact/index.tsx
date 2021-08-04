@@ -73,7 +73,7 @@ class ContactForm extends React.Component<{
             <Grid item className="apellidos">
               <TextField
                 id="apellidos"
-                label="Apellidos"
+                label="apellidos"
                 variant="standard"
                 onChange={this.handleInput}
               />
@@ -103,28 +103,32 @@ class ContactForm extends React.Component<{
                 ))}
               </TextField>
             </Grid>
-            <Grid item className="message">
+            <Grid item className="mensaje">
               <TextField
-                id="message"
+                id="mensaje"
                 label="Envianos un mensaje"
                 variant="standard"
                 onChange={this.handleInput}
               />
             </Grid>
-            <Grid item className="send">
+            <Grid container className="send" sx={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gridTemplateRows: '1fr', justifyContent:'start'}}>
+              <Grid item sx={{ width: 'fit-content'}}>
               <ReCAPTCHA
                 sitekey={captchaKey}
                 onChange={this.humanVerifying}
                 >
                 </ReCAPTCHA>
+              </Grid>
+              <Grid item>
               <Button
+              sx = {{ backgroundColor: '#2B2D2F'}}
                 variant="contained"
-                sx={{ backgroundColor: "#2B2D2F" }}
                 endIcon={<SendIcon />}
                 onClick={this.handleSubmit}
               >
                 Enviar
               </Button>
+              </Grid>
             </Grid>
           </Grid>
         </Box>
@@ -148,6 +152,7 @@ class ContactForm extends React.Component<{
     event.preventDefault()
     const { data } = this.state;
     const mailData = JSON.stringify(data)
+    console.log(mailData)
     const apiURL: any = process.env.REACT_APP_API_URL
     if (this.state.isHuman) {
     axios.post(apiURL, mailData).then((response) => {

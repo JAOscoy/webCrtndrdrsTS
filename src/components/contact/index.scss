@@ -15,7 +15,7 @@
       "nombre apellidos"
       "email operacion"
       "message message"
-      ". send";
+      "captcha send";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     .nombre {
@@ -47,7 +47,7 @@
       height: 70px;
       margin-left: 1rem;
     }
-    .message {
+    .mensaje {
       grid-area: message;
       justify-self: center;
       width: 50vw;
@@ -59,16 +59,17 @@
     .send {
       grid-area: send;
       display: grid;
+      grid-template-columns: 2fr 2fr;
       justify-content: center;
-      grid-template-columns: auto;
       align-items: center;
       color: black;
-      * {
+      button {
         display: grid;
         align-items: center;
-        justify-content: center;
+        background-color: "#2B2D2F";
+        justify-content: start;
         grid-template-columns: 50px 50px;
-        justify-content: flex-start;
+        width: fit-content;
       }
     }
     * {

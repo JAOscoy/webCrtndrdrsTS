@@ -22,31 +22,31 @@ export default function Company(props: CompanyComponent) {
       </Typography>
       <Grid container className="companyItems">
         <Grid item className="about">
-          <ExtensionIcon color="success" sx={{ fontSize: "150px" }} />
+          <ExtensionIcon sx={{ fontSize: "150px", color: "#AD8762"}} />
           <Typography component="p" sx={{ color: "white", fontWeight: "bold" }}>
             {companyData.mision}
           </Typography>
         </Grid>
         <Grid item className="about">
-          <LocalAtmIcon color="success" sx={{ fontSize: "150px" }} />
+          <LocalAtmIcon sx={{ fontSize: "150px", color: "#AD8762"}} />
           <Typography component="p" sx={{ color: "white", fontWeight: "bold" }}>
             {companyData.vision}
           </Typography>
         </Grid>
         <Grid item className="about">
-          <TrendingUp color="success" sx={{ fontSize: "150px" }} />
+          <TrendingUp sx={{ fontSize: "150px", color: "#AD8762"}} />
           <Typography component="p" sx={{ color: "white", fontWeight: "bold" }}>
             {companyData.experience}
           </Typography>
         </Grid>
         <Grid item className="about">
-          <WatchLaterIcon color="success" sx={{ fontSize: "150px" }} />
+          <WatchLaterIcon sx={{ fontSize: "150px", color: "#AD8762" }} />
           <Typography component="p" sx={{ color: "white", fontWeight: "bold" }}>
             {companyData.financial}
           </Typography>
         </Grid>
         <Grid item className="about">
-          <LocalShippingIcon color="success" sx={{ fontSize: "150px" }} />
+          <LocalShippingIcon sx={{ fontSize: "150px", color: "#AD8762" }} />
           <Typography component="p" sx={{ color: "white", fontWeight: "bold" }}>
             {companyData.quality}
           </Typography>
@@ -57,7 +57,7 @@ export default function Company(props: CompanyComponent) {
             sx={{
               fontWeight: "bold",
               fontSize: "100px",
-              color: "#42ba96",
+              color: "#AD8762",
             }}
           >
             QA

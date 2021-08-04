@@ -8,8 +8,10 @@ export interface ProductComponent {
 export interface TabsComponent {
   tabsData: {
     calibre: string[];
-    // tipo: { value: number; properties: string }[];
-    //colorCara: { value: number; properties: string }[];
-    //dimensiones: { value: number; properties: string }[];
+    tipo: string[];
+    color: string[];
+    dimensiones: string[];
+    suaje: string[];
+    uniones: string[];
   };
 }

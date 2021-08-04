@@ -6,7 +6,7 @@ import logo from "../../resources/logo.png";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "@material-ui/core/Link";
 import { Typography } from "@material-ui/core";
-import "./styles.css";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 class Header extends React.Component {
 
@@ -56,6 +56,13 @@ class Header extends React.Component {
               onClick={() => this.scrollTo("contact")}
             >
               Contactanos
+            </Link>
+            <Link
+              sx={{ color: "black", fontWeight: "bold", padding: "5px" }}
+              underline="none"
+              href='/login'
+            >
+              <AccountCircleIcon />
             </Link>
           </Grid>
         </Grid>

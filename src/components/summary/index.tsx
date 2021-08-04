@@ -36,8 +36,19 @@ const itemData = [
   },
 ];
 
+const colsResp = () => {
+  if (window.screen.width < 600 ) {
+  return 6
+  } else {
+    return 3
+  }
+}
+
+const x = colsResp()
+
 export default function Summary(props: SummaryComponent) {
   const { summaryData } = props;
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -80,9 +91,8 @@ export default function Summary(props: SummaryComponent) {
       <Box className="carrousel">
         <ImageList
         className='listImage'
-        sx={{ width: "auto", height: "auto", overflow: "scroll" }}
-        cols={3}
-        rowHeight={250}
+        sx={{ overflow: "hidden" }}
+        cols={x}
       >
         {itemData.map((item) => (
           <ImageListItem key={item.img} className='listImageItem'>

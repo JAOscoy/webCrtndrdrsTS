@@ -83,19 +83,49 @@ export default function VerticalTabs(props: TabsComponent) {
         </List>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <List>
+          {tabsData.tipo.map((item) => (
+            <ListItem disablePadding key={item}>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+      <List>
+          {tabsData.color.map((item) => (
+            <ListItem disablePadding key={item}>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+      <List>
+          {tabsData.dimensiones.map((item) => (
+            <ListItem disablePadding key={item}>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Four
+      <List>
+          {tabsData.uniones.map((item) => (
+            <ListItem disablePadding key={item}>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Four
+      <List>
+          {tabsData.suaje.map((item) => (
+            <ListItem disablePadding key={item}>
+              <ListItemText primary={item}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
       </TabPanel>
     </Box>
   );

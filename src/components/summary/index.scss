@@ -14,14 +14,52 @@
     justify-self: center;
     }
   }
+  .main {
+    padding: 1rem;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.main {
-  padding: 1rem;
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 600px) {
+  .summary {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 120vh;
+    .carrousel {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      height: auto;
+      .listImage {
+        object-fit: fill;
+        height: 270px;
+        width: 270px;
+        overflow: hidden;
+        .listImageItem {
+          * {
+          height: auto;
+          width: 230px;
+          }
+        }
+      }
+       * {
+      justify-self: center;
+      }
+    }
+    .main {
+      padding: 1rem;
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .main > h1 {
@@ -39,16 +77,36 @@
 .carrousel {
   width: auto;
   height: auto;
-  margin: 0.25rem;
+  margin-top: 5vh;
   .listImage {
-    object-fit: contain;
-    height: 70vh;
+    object-fit: fill;
+    height: auto;
     width: auto;
     .listImageItem {
       * {
-      height: 300px;
-      width: 400px;
+      height: 180px;
+      width: 180px;
       }
     }
   }
+}
+
+@media screen and (min-width: 1600px) {
+  .carrousel {
+    width: auto;
+    height: auto;
+    margin-top: 5vh;
+    .listImage {
+      object-fit: fill;
+      height: auto;
+      width: auto;
+      .listImageItem {
+        * {
+        height: 300px;
+        width: 300px;
+        }
+      }
+    }
+  }
+
 }
